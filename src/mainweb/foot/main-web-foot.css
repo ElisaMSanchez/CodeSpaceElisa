@@ -1,0 +1,16 @@
+.mainWeb-foot{
+    flex: 1 1 auto;
+}
+.mainWEb-foot{
+display: flex;
+justify-content: center;
+align-items: center;
+    padding-bottom: 3rem;
+}
+
+.main-web-foot-icons{
+width: 6rem;
+font-size: 3.7rem;
+color: #2caa95;
+
+}

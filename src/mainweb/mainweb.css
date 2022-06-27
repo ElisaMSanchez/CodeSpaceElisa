@@ -1,0 +1,10 @@
+body{
+    background-color: white;
+
+}
+
+.mainWeb{
+    display: flex;
+    flex-direction:column;
+
+}

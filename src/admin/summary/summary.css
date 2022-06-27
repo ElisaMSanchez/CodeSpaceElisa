@@ -1,0 +1,25 @@
+.summary {
+    align-items: center;
+    display: flex;
+    flex: 0.7 1 0;
+    flex-direction: column;
+    gap: 1em;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.summary-customers {
+    flex: 0.2 1 0;
+    width: 99%;
+}
+
+.summary-active-voucher {
+    flex: 0.2 1 0;
+    width: 99%;
+}
+
+.summary-lessons {
+    flex: 0.2 1 0;
+    width: 99%;
+}
+

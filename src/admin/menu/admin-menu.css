@@ -1,0 +1,19 @@
+.admin-menu-tabs {
+    align-items: center;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    gap: 0.5em;
+    justify-content: flex-start;
+    width: 98%;
+}
+
+.admin-menu-tab {
+    align-items: center;
+    border: 1px aquamarine solid;
+    display: flex;
+    flex: 0.1 1 auto;
+    flex-direction: column;
+    height: 90%;
+    justify-content: center;
+}
