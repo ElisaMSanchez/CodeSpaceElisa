@@ -1,6 +1,6 @@
 .admin-button-overlay {
-    background: lightgreen;
-    border: 1px solid #c4d2b8;
+    background: var(--verde-claro);
+    border: 1px solid var(--verde-claro);
     box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     cursor: pointer;
@@ -11,7 +11,11 @@
 }
 
 .admin-button-overlay:active {
-    background-color: greenyellow;
+    background-color: #2caa95;
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
+}
+.admin-button-overlay:hover {
+    background-color: #2caa95;
     box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
 }
 
