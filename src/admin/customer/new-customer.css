@@ -33,13 +33,6 @@
     width: 150px;
 }
 
-.new-customer-form-item-input {
-    width: 100%;
-    border: 2px solid #2caa95;
-    box-shadow: 0px 0px 10px -5px #2caa95;
-    border-radius: 4px;
-}
-
 .new-customer-form-item.observaciones {
     align-items: flex-start;
     flex-direction: column;

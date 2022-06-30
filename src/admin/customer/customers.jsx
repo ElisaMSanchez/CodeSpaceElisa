@@ -1,5 +1,6 @@
 import './customers.css';
 import {useEffect, useState} from 'react';
+import {FaSearch} from "react-icons/fa";
 
 function Customers({onSearchCustomers, onSelectCustomer}) {
 
@@ -26,8 +27,8 @@ function Customers({onSearchCustomers, onSelectCustomer}) {
         <div className='customers'>
             <div className='customers-empty-start-block'/>
             <div className='customers-search'>
-                <div className='customers-search-icon'>TODO</div>
-                <input type='search' className='customers-search-input' value={searchText} onChange={handleOnChangeSearchText}/>
+                <div className='customers-search-icon'><FaSearch className="customers-search-icon"/></div>
+                <input type='search' className='customers-search-input' value={searchText} placeholder={"insertar..."} onChange={handleOnChangeSearchText}/>
             </div>
             <div className='customers-table-overlay'>
                 <table className='customers-table'>
@@ -41,8 +42,9 @@ function Customers({onSearchCustomers, onSelectCustomer}) {
                     <tbody>
                     {
                         customers.length > 0 ?
-                            customers.map(customer => {
-                                const trClassName = `customers-table-tr body ${selectedCustomerId === customer.id ? 'selected' : ''} `;
+                            customers.map((customer, i) => {
+                                const trOddEven= i % 2 === 0 ? 'customers-table-tr-white' : 'customers-table-tr-green';
+                                const trClassName = `customers-table-tr body ${trOddEven} ${selectedCustomerId === customer.id ? 'selected' : ''} `;
 
                                 return (
                                     <tr key={customer.id} className={trClassName} onClick={(event) => handleOnClick(event, customer.id)}>

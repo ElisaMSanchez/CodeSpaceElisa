@@ -2,6 +2,10 @@
     font-family: "Gotham Light";
     src: url("Gotham Light.otf") format("opentype");
 }
+@font-face {
+    font-family: "Gotham Bold";
+    src: url("Gotham Bold.otf") format("opentype");
+}
 
 :root {
     --verde-claro: #b4d6ca;
@@ -20,4 +24,11 @@ html, body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+input{
+    width: 100%;
+    border: 2px solid var(--verde-oscuro);
+    box-shadow: 0px 0px 10px -5px var(--verde-oscuro);
+    border-radius: 4px;
 }

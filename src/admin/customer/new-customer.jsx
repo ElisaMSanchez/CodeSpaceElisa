@@ -1,8 +1,10 @@
 import './new-customer.css';
-import {useState} from 'react';
+import {useContext, useState} from 'react';
 import AdminButton from '../common/admin-button';
 import handleOnChangeInput from '../../common/form/change-handler';
 import AdminButtonLabel from '../common/admin-button-label';
+import {registerCustomer} from '../api';
+import {AdminOverlayContext, OverlayErrorType, OverlayMessageType} from '../common/admin-overlay';
 
 function NewCustomer() {
     const emptyCustomer = {
@@ -16,15 +18,18 @@ function NewCustomer() {
 
     const [customer, setCustomer] = useState(emptyCustomer);
 
+    const {setOverlayConfig} = useContext(AdminOverlayContext);
+    const errorCallback = () => setOverlayConfig({message: 'Hubo problemas contactando con el servidor, por favor pruebe otra vez mas tarde', type: OverlayErrorType});
+
     const handleChange = handleOnChangeInput(setCustomer);
 
     const handleOnSubmit = async (event) => {
         event.preventDefault();
+        const registeredCustomer = await registerCustomer(customer, errorCallback);
 
-/* TODO llamar al backend para que guarde*/
-
-        if (customer) {
+        if (registeredCustomer) {
             setCustomer(emptyCustomer);
+            setOverlayConfig({message: 'Cliente dado de alta', type: OverlayMessageType});
         }
     }
 
@@ -33,23 +38,23 @@ function NewCustomer() {
             <div className='new-customer-form'>
                 <div className='new-customer-form-item'>
                     <label className='new-customer-form-item-label'>Nombre: </label>
-                    <input type='text' required={true} name='name' className='new-customer-form-item-input' onChange={handleChange} value={customer.name}/>
+                    <input type='text' required={true} name='name' onChange={handleChange} value={customer.name}/>
                 </div>
                 <div className='new-customer-form-item'>
                     <label className='new-customer-form-item-label'>Apellido 1: </label>
-                    <input type='text' required={true} name='firstSurname' className='new-customer-form-item-input' onChange={handleChange} value={customer.firstSurname}/>
+                    <input type='text' required={true} name='firstSurname' onChange={handleChange} value={customer.firstSurname}/>
                 </div>
                 <div className='new-customer-form-item'>
                     <label className='new-customer-form-item-label'>Apellido 2: </label>
-                    <input type='text' name='lastSurname' className='new-customer-form-item-input' onChange={handleChange} value={customer.lastSurname}/>
+                    <input type='text' name='lastSurname' onChange={handleChange} value={customer.lastSurname}/>
                 </div>
                 <div className='new-customer-form-item'>
                     <label className='new-customer-form-item-label'>Telefono: </label>
-                    <input type='tel' required={true} name='phone' className='new-customer-form-item-input' onChange={handleChange} value={customer.phone}/>
+                    <input type='tel' required={true} name='phone' onChange={handleChange} value={customer.phone}/>
                 </div>
                 <div className='new-customer-form-item'>
                     <label className='new-customer-form-item-label'>Email: </label>
-                    <input type='email' required={true} name='email' className='new-customer-form-item-input' onChange={handleChange} value={customer.email}/>
+                    <input type='email' required={true} name='email' onChange={handleChange} value={customer.email}/>
                 </div>
                 <div className='new-customer-form-item observaciones'>
                     <label className='new-customer-form-item-label-observaciones'>Observaciones: </label>

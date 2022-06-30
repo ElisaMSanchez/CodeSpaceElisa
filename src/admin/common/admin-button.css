@@ -1,22 +1,27 @@
 .admin-button-overlay {
     background: var(--verde-claro);
     border: 1px solid var(--verde-claro);
-    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px -1px var(--verde-claro);
     box-sizing: border-box;
     cursor: pointer;
     display: flex;
     flex-direction: row;
     height: 100%;
     justify-content: center;
+    color:var(--verde-oscuro);
 }
 
 .admin-button-overlay:active {
-    background-color: #2caa95;
-    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
+    background-color: var(--verde-oscuro);
+    color: var(--verde-claro);
+    box-shadow: 0 0 5px -1px var(--verde-oscuro);
+    font-family: "Gotham Bold", serif;
 }
+
 .admin-button-overlay:hover {
-    background-color: #2caa95;
-    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--verde-oscuro);
+    box-shadow: 0 0 5px -1px var(--verde-oscuro);
+    font-family: "Gotham Bold", serif;
 }
 
 .admin-button {
@@ -25,4 +30,5 @@
     flex: 0 1 auto;
     flex-direction: column;
     justify-content: center;
+    font-family: "Gotham Bold", serif;
 }
