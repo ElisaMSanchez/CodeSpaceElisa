@@ -3,31 +3,40 @@
     display: flex;
     flex: 1 1 auto;
     flex-direction: row;
-    gap: 0.5em;
     justify-content: flex-start;
     width: 100%;
-
 
 }
 
 .admin-menu-tab {
     align-items: center;
-    border: 1px solid var(--verde-oscuro);
     display: flex;
     flex: 0.1 1 auto;
     flex-direction: column;
     height: 100%;
     justify-content: center;
-    border-radius: 5px 0 0 0;
     background-color: var(--verde-claro);
-
+    border: 2px solid var(--verde-oscuro);
+    border-radius: 5px 0 0 0;
+    margin-top: 1rem;
 
 }
+.admin-menu-tab:first-child{
+    margin-left: .4rem;
+}
+.admin-menu-tab.selected{
+    background-color: var(--verde-oscuro);
+
+}
+
 .admin-menu-tab-link{
     text-decoration: none;
     color: white;
     font-family: "Gotham Bold",serif;
+
 }
+
 .admin-menu-tab:hover{
    background-color: var(--verde-oscuro);
+
 }

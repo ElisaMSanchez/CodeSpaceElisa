@@ -3,23 +3,27 @@ import {Link} from 'react-router-dom';
 import {useState} from "react";
 
 function AdminMenu({tabConfigs}) {
-const [tabSelected,setTabSelected]=useState();
+    const [tabSelected, setTabSelected] = useState(tabConfigs[0].path);
 
-    function handleOnClick(tabKey){
+    function handleOnClick(tabKey) {
         setTabSelected(tabKey);
 
     }
-console.log(tabSelected);
+
+    console.log(tabSelected);
     return (
 
         <div className='admin-menu-tabs'>
             {
                 tabConfigs.map(tabConfig => {
-                    const tabSeletedClass= tabSelected ===tabConfig.path ? 'tabSelected':"";
+                    const tabSelectedClass = tabSelected === tabConfig.path ? 'selected' : "";
                     return (
-                        <div key={tabConfig.path} className={`admin-menu-tab ${tabSeletedClass}`}  onClick={e=>{handleOnClick(tabConfig.path)}}>
-                            <Link to={tabConfig.path} className= 'admin-menu-tab-link'>{tabConfig.label}</Link>
-                        </div>
+                        <Link to={tabConfig.path} key={tabConfig.path}
+                              className={`admin-menu-tab-link admin-menu-tab  ${tabSelectedClass}`} onClick={e => {
+                            handleOnClick(tabConfig.path)
+                        }}>
+                            {tabConfig.label}
+                        </Link>
                     )
                 })
             }
