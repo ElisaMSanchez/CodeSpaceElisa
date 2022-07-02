@@ -1,10 +1,38 @@
 import './summary.css';
 import Customers from '../customer/customers';
-import {useCallback, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
+import Voucher from './voucher/voucher';
 
 function Summary() {
 
     const [selectedCustomerId, setSelectedCustomerId] = useState(null);
+    const [activeVoucher, setActiveVoucher] = useState(null);
+
+    useEffect(() => {
+        if (selectedCustomerId) {
+            // TODO Get the Active Voucher for the customer here.
+            if (selectedCustomerId === '1') {
+                setActiveVoucher({
+                    id: `Voucher ${selectedCustomerId}`,
+                    customerId: '1',
+                    maxLessons: 5,
+                    lessons: [{
+                        id: `Lesson 1 - ${selectedCustomerId}`,
+                        createdAt: '2021-12-01',
+                        internalComment: 'This is an internal comment',
+                        externalComment: 'This is an external comment'
+                    }, {
+                        id: `Lesson 2 - ${selectedCustomerId}`,
+                        createdAt: '2021-12-15',
+                        internalComment: 'This is another internal comment',
+                        externalComment: 'This is another external comment'
+                    }]
+                })
+            } else {
+                setActiveVoucher(null)
+            }
+        }
+    }, [selectedCustomerId]);
 
     const handleOnSearchCustomers = useCallback(async (searchText, callback) => {
         console.log("Cadena de busqueda: " + searchText);
@@ -57,10 +85,30 @@ function Summary() {
         setSelectedCustomerId(id);
     }
 
+    const handleOnClickActivateVoucher = async () => {
+        setActiveVoucher({
+            id: `Voucher ${selectedCustomerId}`,
+            customerId: String(selectedCustomerId),
+            maxLessons: 5,
+            currentLessons: 2
+        });
+    }
+
+    const handleOnClickCloseVoucher = async (voucher) => {
+        console.log(JSON.stringify(voucher))
+
+        setActiveVoucher(null);
+    }
+
     return (
         <div className='summary'>
             <div className='summary-customers'>
                 <Customers onSearchCustomers={handleOnSearchCustomers} onSelectCustomer={handleOnSelectCustomer}/>
+            </div>
+            <div className='summary-active-voucher'>
+                <Voucher activeVoucher={activeVoucher} onClickActivateVoucher={handleOnClickActivateVoucher}
+                         onClickCloseVoucher={handleOnClickCloseVoucher}
+                         display={selectedCustomerId !== null}/>
             </div>
             TODO
         </div>

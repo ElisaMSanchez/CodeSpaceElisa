@@ -1,0 +1,75 @@
+.voucher {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+.voucher.visible {
+    visibility: visible;
+}
+
+.voucher.hidden {
+    visibility: hidden;
+}
+
+.voucher-status {
+    align-items: center;
+    display: flex;
+    flex: 0.5 1 auto;
+    justify-content: space-evenly;
+}
+
+.voucher-status.active {
+    border: 1px black solid;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.voucher-status.inactive {
+    flex-direction: row;
+    min-height: 4.5em;
+    width: 100%;
+}
+
+.voucher-status-activate-label {
+    flex: 0.8 1 auto
+}
+
+.voucher-status-lessons {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.voucher-status-lesson {
+    flex: 0.14 0.5;
+    height: 8.5vw;
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.voucher-status-lesson.used {
+    background-color: red;
+}
+
+.voucher-status-lesson.free {
+    background-color: green;
+}
+
+.voucher-status-close-label {
+    flex: 0.8 1 auto
+}
+
+.voucher-status-activate-button {
+    width: 70%;
+}
+
+.voucher-status-close {
+    min-height: 2em;
+    width: 70%;
+}
