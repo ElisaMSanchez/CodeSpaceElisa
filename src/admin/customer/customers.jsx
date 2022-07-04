@@ -13,6 +13,7 @@ function Customers({onSearchCustomers, onSelectCustomer}) {
     }, [onSearchCustomers, searchText]);
 
     const handleOnChangeSearchText = (event) => {
+        setSelectedCustomerId(null);
         setSearchText(event.target.value);
     }
 

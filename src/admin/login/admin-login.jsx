@@ -1,16 +1,19 @@
 import './admin-login.css';
-import {useState} from 'react';
+import {useCallback, useState} from 'react';
 import AdminButton from '../common/admin-button';
 import AdminButtonLabel from '../common/admin-button-label';
 import handleOnChangeInput from '../../common/form/change-handler';
+import {doLogin} from '../api';
 
 function AdminLogin({setToken}) {
     const [login, setLogin] = useState({username: '', password: ''});
     const handleChange = handleOnChangeInput(setLogin);
 
-    const handleSubmit = (event) => {
+    const errorCallback = (err) => console.log(err);
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        setToken({"token": "test"});
+        setToken(await doLogin(login, errorCallback));
     }
 
     return (

@@ -1,8 +1,9 @@
 import './new-customer.css';
-import {useContext, useState} from 'react';
+import {useState} from 'react';
 import AdminButton from '../common/admin-button';
 import handleOnChangeInput from '../../common/form/change-handler';
 import AdminButtonLabel from '../common/admin-button-label';
+import {registerCustomer} from '../api';
 
 function NewCustomer() {
     const emptyCustomer = {
@@ -15,13 +16,17 @@ function NewCustomer() {
     }
 
     const [customer, setCustomer] = useState(emptyCustomer);
-
     const handleChange = handleOnChangeInput(setCustomer);
+    const errorCallback = (err) => console.log(err);
 
     const handleOnSubmit = async (event) => {
         event.preventDefault();
-        
-        setCustomer(emptyCustomer);
+        const registeredCustomer = await registerCustomer(customer, errorCallback);
+
+        if (registeredCustomer) {
+            setCustomer(emptyCustomer);
+            console.log('Cliente dado de alta');
+        }
     }
 
     return (
@@ -33,7 +38,8 @@ function NewCustomer() {
                 </div>
                 <div className='new-customer-form-item'>
                     <label className='new-customer-form-item-label'>Apellido 1: </label>
-                    <input type='text' required={true} name='firstSurname' onChange={handleChange} value={customer.firstSurname}/>
+                    <input type='text' required={true} name='firstSurname' onChange={handleChange}
+                           value={customer.firstSurname}/>
                 </div>
                 <div className='new-customer-form-item'>
                     <label className='new-customer-form-item-label'>Apellido 2: </label>
@@ -49,7 +55,8 @@ function NewCustomer() {
                 </div>
                 <div className='new-customer-form-item observaciones'>
                     <label className='new-customer-form-item-label-observaciones'>Observaciones: </label>
-                    <textarea name='comments' className='new-customer-form-item-input-observaciones' onChange={handleChange} value={customer.comments}/>
+                    <textarea name='comments' className='new-customer-form-item-input-observaciones'
+                              onChange={handleChange} value={customer.comments}/>
                 </div>
                 <div className='new-customer-form-item'>
                     <AdminButton onClick={handleOnSubmit} extraClass='new-customer-form-item-button'>
