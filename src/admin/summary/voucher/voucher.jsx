@@ -2,11 +2,10 @@ import './voucher.css'
 import AdminButton from '../../common/admin-button';
 import AdminButtonLabel from '../../common/admin-button-label';
 
-function Voucher({display, activeVoucher, onClickActivateVoucher, onClickCloseVoucher}) {
+function Voucher({display, openVoucher, lessons, onClickActivateVoucher, onClickCloseVoucher}) {
 
     const voucherClassName = `voucher ${display ? 'visible' : 'hidden'}`;
-    const lessons = activeVoucher ? activeVoucher.lessons : [];
-    const usedLessons = lessons ? lessons.length : 0;
+    const usedLessons = lessons.length;
 
     const handleOnClickActivateVoucher = (event) => {
         event.preventDefault();
@@ -15,20 +14,20 @@ function Voucher({display, activeVoucher, onClickActivateVoucher, onClickCloseVo
 
     const handleOnClickCloseVoucher = (event) => {
         event.preventDefault();
-        onClickCloseVoucher(activeVoucher);
+        onClickCloseVoucher(openVoucher);
     }
 
     return (
         <div className={voucherClassName}>
             {
-                activeVoucher ?
+                openVoucher ?
                     <div className='voucher-status active'>
                         <label>
                             Clases disponibles en Bono:
                         </label>
                         <div className='voucher-status-lessons'>
                             {
-                                Array(activeVoucher.maxLessons).fill().map((val, index) => {
+                                Array(openVoucher.maxLessons).fill().map((val, index) => {
                                     const voucherLessonClass = `voucher-status-lesson ${index < usedLessons ? 'used' : 'free'}`;
 
                                     return (

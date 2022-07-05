@@ -1,4 +1,4 @@
-const pathHost= "http://localhost:3001"
+const pathHost = "http://localhost:3001"
 
 export function to(promise) {
     return promise.then(data => [null, data])
@@ -45,7 +45,7 @@ export async function searchCustomers(searchText, errorCallback) {
     }
 }
 
-export async function fetchActiveVoucher(customerId, errorCallback) {
+export async function fetchOpenVoucher(customerId, errorCallback) {
     const [err, data] = await to(fetch(`${pathHost}/customer/${customerId}/voucher/active`, {
         method: 'GET',
         headers: {
@@ -61,7 +61,7 @@ export async function fetchActiveVoucher(customerId, errorCallback) {
     }
 }
 
-export async function activateVoucher(customerId, errorCallback) {
+export async function markOpenVoucher(customerId, errorCallback) {
     const [err, data] = await to(fetch(`${pathHost}/customer/${customerId}/voucher/open`, {
         method: 'POST',
         headers: {
@@ -91,6 +91,27 @@ export async function closeVoucher(customerId, voucherId, errorCallback) {
         errorCallback(err);
         return null;
     }
+}
+
+
+//TODO metodo para llamar al backend para buscar lessons
+
+export async function findLessons(customerId, voucherId, errorCallback) {
+    const [err, data] = await to(fetch(`${pathHost}/customer/${customerId}/voucher/${voucherId}/lesson`,
+        {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        }));
+    if (data) {
+        return extractBody(data);
+    } else {
+        errorCallback(err);
+        return null;
+    }
+
 }
 
 export async function registerLesson(customerId, voucherId, lesson, errorCallback) {

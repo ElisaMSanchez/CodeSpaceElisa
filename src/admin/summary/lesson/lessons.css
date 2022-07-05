@@ -1,0 +1,116 @@
+.lessons {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.lessons.visible {
+    visibility: visible;
+}
+
+.lessons.hidden {
+    visibility: hidden;
+}
+
+.lessons-table-overlay {
+    flex: 0.2 1 auto;
+    width: 100%;
+}
+
+.lessons-table {
+    border: 1px black solid;
+    width: 100%;
+    word-break: break-word;
+}
+
+.lessons-table-tr {
+    height: 2em;
+}
+
+.lessons-table-tr.head {
+    font-weight: bold;
+}
+
+.lessons-table-actions {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.lessons-table-actions .action {
+    flex: 0.4 1 0;
+    height: 2em;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
+
+.lesson-form {
+    display: flex;
+    flex: 0.5 1 0;
+    flex-direction: column;
+    gap: 0.5em;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.lesson-form-item {
+    align-items: center;
+    display: flex;
+    flex: 0.1 0.5 auto;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.lesson-form-item-label {
+    margin-bottom: 0.5em;
+}
+
+.lesson-form-item-input-date {
+    width: 8em;
+}
+
+.lesson-form-item-input-comment {
+    box-sizing: border-box;
+    display: block;
+    height: 5em;
+    width: 100%;
+}
+
+.lesson-form-item-button {
+    min-height: 2em;
+    width: 70%;
+}
+
+@media (max-width: 680px) {
+    .lessons-table-th.comments {
+        display: none;
+    }
+
+    .lessons-table-td.comments {
+        display: none;
+    }
+
+    .lessons-table-tr.body.lesson-form-row {
+        display: none;
+    }
+}
+
+@media (max-width: 440px) {
+    .summary-empty-start-block {
+        min-height: 4em;
+    }
+}
+
+@media (min-width: 680px) {
+
+    .lesson-form {
+        display: none;
+    }
+
+    .lessons-table-tr.body.update {
+        display: none;
+    }
+}
