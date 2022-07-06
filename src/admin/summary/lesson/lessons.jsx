@@ -98,7 +98,6 @@ function Lessons({display, lessons, onNewLesson, onLessonUpdated, onLessonDelete
                 </td>
                 <td className='lessons-table-td comments'>
                     <p className='lessons-table-comment internal'>{lesson.internalComment}</p>
-                    <p className='lessons-table-comment external'>{lesson.externalComment}</p>
                 </td>
                 <td className='lessons-table-td actions'>
                     {
@@ -128,10 +127,8 @@ function Lessons({display, lessons, onNewLesson, onLessonUpdated, onLessonDelete
                     <input type='date' required={true} name='createdAt' className='lesson-form-item-input' onChange={handleChange} value={lesson.createdAt}/>
                 </td>
                 <td className='lessons-table-td comments lesson-form-row'>
-                    <label className='lessons-table-label-comment'>Comentario Privado</label>
+                    <label className='lessons-table-label-comment'>Comentarios</label>
                     <textarea name='internalComment' className='lesson-form-item-input-comment' onChange={handleChange} value={lesson.internalComment}/>
-                    <label className='lessons-table-label-comment'>Comentario Publico</label>
-                    <textarea name='externalComment' className='lesson-form-item-input-comment' onChange={handleChange} value={lesson.externalComment}/>
                 </td>
                 <td className='lessons-table-td actions lesson-form-row'>
                     <div className='lessons-table-actions'>
@@ -165,10 +162,6 @@ function Lessons({display, lessons, onNewLesson, onLessonUpdated, onLessonDelete
                 <div className='lesson-form-item'>
                     <label className='lesson-form-item-label'>Comentario Privado: </label>
                     <textarea name='internalComment' className='lesson-form-item-input-comment' onChange={handleChange} value={lesson.internalComment}/>
-                </div>
-                <div className='lesson-form-item'>
-                    <label className='lesson-form-item-label'>Comentario Publico: </label>
-                    <textarea name='externalComment' className='lesson-form-item-input-comment' onChange={handleChange} value={lesson.externalComment}/>
                 </div>
 
                 <div className='lesson-form-item'>

@@ -22,10 +22,12 @@
 }
 
 .voucher-status.active {
-    border: 1px black solid;
+    border: 2px solid var(--verde-oscuro);
+    box-shadow: 0 0 10px -5px var(--verde-oscuro);
     flex-direction: column;
     gap: 10px;
     width: 100%;
+
 }
 
 .voucher-status.inactive {
@@ -54,11 +56,12 @@
 }
 
 .voucher-status-lesson.used {
-    background-color: red;
+    color: var(--verde-claro);
 }
 
 .voucher-status-lesson.free {
-    background-color: green;
+
+    color: var(--verde-oscuro);
 }
 
 .voucher-status-close-label {
@@ -72,4 +75,5 @@
 .voucher-status-close {
     min-height: 2em;
     width: 70%;
+    margin:.5rem 1rem;
 }

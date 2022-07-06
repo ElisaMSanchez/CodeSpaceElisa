@@ -15,19 +15,26 @@ function AdminLogin({setToken}) {
         event.preventDefault();
         setToken(await doLogin(login, errorCallback));
     }
+    const handleEnter = async (event) => {
+        if (event.code === "Enter") {
+            setToken(await doLogin(login, errorCallback));
+        }
+    }
 
     return (
         <div className="login-wrapper">
-            <h2>Por favor, identifíquese</h2>
+            <h2 className=""> Por favor, identifíquese</h2>
             <label>
                 <p>Usuario</p>
-                <input type="text" name='username' onChange={handleChange} value={login.username}/>
+                <input type="text" name='username' onChange={handleChange} value={login.username}
+                       onKeyPress={handleEnter}/>
             </label>
             <label>
                 <p>Contraseña</p>
-                <input type="password" name='password' onChange={handleChange} value={login.password}/>
+                <input type="password" name='password' onChange={handleChange} value={login.password}  onKeyPress={handleEnter}/>
+
             </label>
-            <div>
+            <div className="button-login">
                 <AdminButton onClick={handleSubmit}>
                     <AdminButtonLabel label='Entrar'/>
                 </AdminButton>

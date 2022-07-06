@@ -1,8 +1,11 @@
 import './voucher.css'
+
 import AdminButton from '../../common/admin-button';
 import AdminButtonLabel from '../../common/admin-button-label';
 
-function Voucher({display, openVoucher, lessons, onClickActivateVoucher, onClickCloseVoucher}) {
+import { FaWhatsapp } from "react-icons/fa";
+
+export default function Voucher({display, openVoucher, lessons, onClickActivateVoucher, onClickCloseVoucher}) {
 
     const voucherClassName = `voucher ${display ? 'visible' : 'hidden'}`;
     const usedLessons = lessons.length;
@@ -17,21 +20,23 @@ function Voucher({display, openVoucher, lessons, onClickActivateVoucher, onClick
         onClickCloseVoucher(openVoucher);
     }
 
+
     return (
         <div className={voucherClassName}>
             {
+
                 openVoucher ?
                     <div className='voucher-status active'>
                         <label>
                             Clases disponibles en Bono:
                         </label>
-                        <div className='voucher-status-lessons'>
+                        <div className='voucher-status-lessons' >
                             {
                                 Array(openVoucher.maxLessons).fill().map((val, index) => {
                                     const voucherLessonClass = `voucher-status-lesson ${index < usedLessons ? 'used' : 'free'}`;
 
                                     return (
-                                        <div key={String(index)} className={voucherLessonClass}/>
+                                        <FaWhatsapp key={String(index)} className={voucherLessonClass}/>
                                     );
                                 })
                             }
@@ -53,4 +58,3 @@ function Voucher({display, openVoucher, lessons, onClickActivateVoucher, onClick
     )
 }
 
-export default Voucher;

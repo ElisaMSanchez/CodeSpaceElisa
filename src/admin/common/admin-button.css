@@ -9,6 +9,8 @@
     height: 100%;
     justify-content: center;
     color:var(--verde-oscuro);
+
+
 }
 
 .admin-button-overlay:active {
@@ -16,12 +18,14 @@
     color: var(--verde-claro);
     box-shadow: 0 0 5px -1px var(--verde-oscuro);
     font-family: "Gotham Bold", serif;
+
 }
 
 .admin-button-overlay:hover {
     border: 2px solid var(--verde-oscuro);
     box-shadow: 0 0 5px -1px var(--verde-oscuro);
     font-family: "Gotham Bold", serif;
+
 }
 
 .admin-button {
@@ -31,4 +35,5 @@
     flex-direction: column;
     justify-content: center;
     font-family: "Gotham Bold", serif;
+
 }

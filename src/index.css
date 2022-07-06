@@ -29,6 +29,6 @@ code {
 input{
     width: 100%;
     border: 2px solid var(--verde-oscuro);
-    box-shadow: 0px 0px 10px -5px var(--verde-oscuro);
+    box-shadow: 0 0 10px -5px var(--verde-oscuro);
     border-radius: 4px;
 }

@@ -2,4 +2,20 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    border: 4px solid #2caa95;
+    box-shadow: inset 0px 0px 16px -4px #2caa95;
+    border-radius: 4px;
+    height: 100%;
+    color: var(--verde-oscuro);
+    padding-top: 2rem;
+
+}
+h2{
+    font-family: "Gotham Bold",serif;
+}
+.button-login{
+    margin:2rem;
+}
+label{
+    font-family: "Gotham Bold";
 }
