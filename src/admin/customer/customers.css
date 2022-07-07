@@ -18,7 +18,7 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    padding:0.9rem;
+    padding: 0.9rem;
 
 }
 
@@ -35,8 +35,8 @@
 .customers-search-input {
     flex: 1 1 0;
     width: 100%;
-    padding:.2rem;
-    color:var(--verde-oscuro);
+    padding: .2rem;
+    color: var(--verde-oscuro);
     outline: none;
 
 }
@@ -51,7 +51,7 @@
     width: 100%;
     word-break: break-word;
     border-collapse: collapse;
-    border:none;
+    border: none;
 
 }
 
@@ -81,6 +81,11 @@
     font-family: "Gotham Bold", serif;
     box-shadow: 0 0 10px -5px var(--verde-oscuro);
     border: 2px solid var(--verde-oscuro);
+}
+
+.customers-table-tr.body.empty {
+    font-family: "Gotham Bold", serif;
+    color: var(--verde-oscuro);
 }
 
 @media (max-width: 680px) {

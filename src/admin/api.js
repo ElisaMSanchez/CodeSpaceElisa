@@ -1,7 +1,9 @@
 const pathHost = "http://localhost:3001"
 
 export function to(promise) {
-    return promise.then(data => [null, data])
+    return promise.then(response => {
+        return response.ok ? [null, response] : [response]
+    })
         .catch(err => [err]);
 }
 

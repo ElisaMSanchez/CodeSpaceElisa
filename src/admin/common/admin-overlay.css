@@ -1,0 +1,62 @@
+.admin-overlay {
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    left: 50%;
+    margin-left: -25%;
+    min-height: 10vw;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    z-index: 10;
+    box-sizing: border-box;
+    background-color: var(--verde-claro-plus);
+}
+
+.admin-overlay.visible {
+    display: flex;
+}
+
+.admin-overlay.hidden {
+    display: none;
+}
+
+.admin-overlay.error {
+    color: indianred;
+    border: 2px solid indianred;
+    box-shadow: 0 0 30px 2px indianred;
+}
+
+.admin-overlay.message {
+    color: var(--verde-oscuro);
+    border: 2px solid var(--verde-oscuro);
+    box-shadow: 0 0 30px 2px var(--verde-oscuro);
+}
+
+.admin-overlay-close-button-overlay {
+    display: flex;
+    flex: .1 0 0;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.admin-overlay-close-button {
+    font-size: 1.5rem;
+    margin-right: 0.1rem;
+}
+
+.admin-overlay-label {
+    align-items: center;
+    display: flex;
+    flex: 1 1 0;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 440px) {
+    .admin-overlay {
+        left: 0;
+        margin-left: 0;
+        width: 100%;
+    }
+}

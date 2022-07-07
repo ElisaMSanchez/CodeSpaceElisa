@@ -1,6 +1,6 @@
 import './summary.css';
 import Customers from '../customer/customers';
-import {useCallback, useEffect, useState} from 'react';
+import {useCallback, useContext, useEffect, useState} from 'react';
 import Voucher from './voucher/voucher';
 import {
     markOpenVoucher,
@@ -12,14 +12,17 @@ import {
     updateLesson, findLessons
 } from "../api";
 import Lessons from "./lesson/lessons";
+import {AdminOverlayContext, OverlayErrorType} from "../common/admin-overlay";
 
 function Summary() {
     const [selectedCustomerId, setSelectedCustomerId] = useState(null);
     const [openVoucher, setOpenVoucher] = useState(null);
     const [lessons, setLessons] = useState(null);
 
-    const errorCallback = useCallback((err) => console.log(err),
-        []);
+    const {setOverlayConfig} = useContext(AdminOverlayContext);
+
+    const errorCallback = useCallback(() =>setOverlayConfig({message: 'Hubo problemas contactando con el servidor, por favor pruebe otra vez mas tarde', OverlayErrorType}),
+        [setOverlayConfig]);
 
     useEffect(() => {
         if (selectedCustomerId) {
@@ -35,8 +38,6 @@ function Summary() {
                 .then((lessons) => setLessons(lessons));
         }
     }, [openVoucher, errorCallback]);
-
-    //TODO busqueda de lecciones en ell voucher open, usando useEffect
 
     const handleOnSearchCustomers = useCallback(async (searchText, callback) => {
             setSelectedCustomerId(null);

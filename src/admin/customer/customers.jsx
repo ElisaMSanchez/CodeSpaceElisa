@@ -56,7 +56,7 @@ function Customers({onSearchCustomers, onSelectCustomer}) {
                                 )
                             })
                             :
-                            <tr className='customers-table-tr body'>
+                            <tr className='customers-table-tr body empty'>
                                 <td className='customers-table-td' colSpan={3}>
                                     Sin Clientes
                                 </td>

@@ -1,9 +1,10 @@
 import './new-customer.css';
-import {useState} from 'react';
+import {useContext, useState} from 'react';
 import AdminButton from '../common/admin-button';
 import handleOnChangeInput from '../../common/form/change-handler';
 import AdminButtonLabel from '../common/admin-button-label';
 import {registerCustomer} from '../api';
+import {AdminOverlayContext, OverlayErrorType, OverlayMessageType} from "../common/admin-overlay";
 
 function NewCustomer() {
     const emptyCustomer = {
@@ -17,15 +18,37 @@ function NewCustomer() {
 
     const [customer, setCustomer] = useState(emptyCustomer);
     const handleChange = handleOnChangeInput(setCustomer);
-    const errorCallback = (err) => console.log(err);
+
+    const {setOverlayConfig} = useContext(AdminOverlayContext);
+    const errorCallback = () => setOverlayConfig({
+        message: 'Hubo problemas contactando con el servidor, por favor pruebe otra vez mas tarde',
+        type: OverlayErrorType
+    });
+
+    const isCustomerIncomplete = (customer) => {
+        return customer.name === ''
+            || customer.firstSurname === ''
+            || customer.lastSurname === ''
+            || customer.email === ''
+            || customer.phone === ''
+            ;
+    }
 
     const handleOnSubmit = async (event) => {
         event.preventDefault();
-        const registeredCustomer = await registerCustomer(customer, errorCallback);
 
-        if (registeredCustomer) {
-            setCustomer(emptyCustomer);
-            console.log('Cliente dado de alta');
+        if (isCustomerIncomplete(customer)) {
+            setOverlayConfig({
+                message: 'Por favor rellene todos los datos del cliente',
+                type: OverlayErrorType
+            })
+        } else {
+            const registeredCustomer = await registerCustomer(customer, errorCallback);
+
+            if (registeredCustomer) {
+                setCustomer(emptyCustomer);
+                setOverlayConfig({message: 'Cliente dado de alta', type: OverlayMessageType});
+            }
         }
     }
 
