@@ -26,23 +26,25 @@
     margin-top: 1rem;
 
 }
-.admin-menu-tab:first-child{
+
+.admin-menu-tab:first-child {
     margin-left: .4rem;
 }
-.admin-menu-tab.selected{
+
+.admin-menu-tab.selected {
     background-color: var(--verde-oscuro);
 
 }
 
-.admin-menu-tab-link{
+.admin-menu-tab-link {
     text-decoration: none;
     color: white;
-    font-family: "Gotham Bold",serif;
+    font-family: "Gotham Bold", serif;
 
 }
 
-.admin-menu-tab:hover{
-   background-color: var(--verde-oscuro);
+.admin-menu-tab:hover {
+    background-color: var(--verde-oscuro);
 
 }
 

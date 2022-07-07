@@ -25,10 +25,10 @@ export default function Voucher({display, openVoucher, lessons, onClickActivateV
 
                 openVoucher ?
                     <div className='voucher-status active'>
-                        <label>
+                        <label className='voucher-status-label'>
                             Clases disponibles en Bono:
                         </label>
-                        <div className='voucher-status-lessons' >
+                        <div className='voucher-status-lessons'>
                             {
                                 Array(openVoucher.maxLessons).fill().map((val, index) => {
                                     const voucherLessonClass = `voucher-status-lesson ${index < usedLessons ? 'used' : 'free'}`;

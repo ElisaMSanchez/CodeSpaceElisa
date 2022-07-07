@@ -29,7 +29,8 @@ function Customers({onSearchCustomers, onSelectCustomer}) {
             <div className='customers-empty-start-block'/>
             <div className='customers-search'>
                 <div className='customers-search-icon'><FaSearch className="customers-search-icon"/></div>
-                <input type='search' className='customers-search-input' value={searchText} placeholder={"insertar..."} onChange={handleOnChangeSearchText}/>
+                <input type='search' className='customers-search-input' value={searchText} placeholder={"insertar..."}
+                       onChange={handleOnChangeSearchText}/>
             </div>
             <div className='customers-table-overlay'>
                 <table className='customers-table'>
@@ -44,11 +45,12 @@ function Customers({onSearchCustomers, onSelectCustomer}) {
                     {
                         customers.length > 0 ?
                             customers.map((customer, i) => {
-                                const trOddEven= i % 2 === 0 ? 'customers-table-tr-white' : 'customers-table-tr-green';
+                                const trOddEven = i % 2 === 0 ? 'customers-table-tr-white' : 'customers-table-tr-green';
                                 const trClassName = `customers-table-tr body ${trOddEven} ${selectedCustomerId === customer.id ? 'selected' : ''} `;
 
                                 return (
-                                    <tr key={customer.id} className={trClassName} onClick={(event) => handleOnClick(event, customer.id)}>
+                                    <tr key={customer.id} className={trClassName}
+                                        onClick={(event) => handleOnClick(event, customer.id)}>
                                         <td className='customers-table-td name'>{customer.name} {customer.firstSurname} {customer.lastSurname}</td>
                                         <td className='customers-table-td phone'>{customer.phone}</td>
                                         <td className='customers-table-td email'>{customer.email}</td>

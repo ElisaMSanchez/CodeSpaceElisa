@@ -8,7 +8,8 @@
     flex-direction: row;
     height: 100%;
     justify-content: center;
-    color:var(--verde-oscuro);
+    color: var(--verde-oscuro);
+    border-radius: 4px;
 
 }
 
@@ -24,7 +25,6 @@
     border: 2px solid var(--verde-oscuro);
     box-shadow: 0 0 5px -1px var(--verde-oscuro);
     font-family: "Gotham Bold", serif;
-
 
 }
 

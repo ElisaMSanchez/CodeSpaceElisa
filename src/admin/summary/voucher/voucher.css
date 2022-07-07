@@ -24,20 +24,23 @@
 .voucher-status.active {
     border: 2px solid var(--verde-oscuro);
     box-shadow: 0 0 10px -5px var(--verde-oscuro);
-    color:var(--verde-oscuro);
+    color: var(--verde-oscuro);
     flex-direction: column;
     gap: 10px;
     width: 100%;
-    margin-top:1rem;
-    padding-top:  1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
     padding-bottom: .5rem;
-
 }
 
 .voucher-status.inactive {
     flex-direction: row;
     min-height: 4.5em;
     width: 100%;
+}
+
+.voucher-status-label {
+    font-family: "Gotham Bold", serif;
 }
 
 .voucher-status-activate-label {
@@ -79,5 +82,5 @@
 .voucher-status-close {
     min-height: 2em;
     width: 70%;
-    margin:.5rem 1rem;
+    margin: .5rem 1rem;
 }

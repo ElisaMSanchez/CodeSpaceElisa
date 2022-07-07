@@ -8,14 +8,29 @@
     height: 100%;
     color: var(--verde-oscuro);
     padding-top: 2rem;
+}
 
+.login-title {
+    font-family: "Gotham Bold", serif;
 }
-h2{
-    font-family: "Gotham Bold",serif;
+
+.login-form {
+    background-color: var(--verde-claro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 4px;
 }
-.button-login{
-    margin:2rem;
+
+.button-login {
+    margin: 2rem;
 }
-label{
-    font-family: "Gotham Bold";
+
+.login-label {
+    font-family: "Gotham Bold", serif;
 }

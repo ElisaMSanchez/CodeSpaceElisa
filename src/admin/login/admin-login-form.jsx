@@ -37,18 +37,20 @@ function AdminLoginForm({setToken}) {
 
     return (
         <div className="login-wrapper">
-            <h2 className=""> Por favor, identifíquese</h2>
-            <label>
-                <p>Usuario</p>
-                <input type="text" name='username' onChange={handleChange} value={login.username}
-                       onKeyPress={handleEnter}/>
-            </label>
-            <label>
-                <p>Contraseña</p>
-                <input type="password" name='password' onChange={handleChange} value={login.password}
-                       onKeyPress={handleEnter}/>
+            <h2 className="login-title"> Por favor, identifíquese</h2>
+            <div className="login-form">
+                <label>
+                    <p className="login-label">Usuario</p>
+                    <input type="text" name='username' onChange={handleChange} value={login.username}
+                           onKeyPress={handleEnter}/>
+                </label>
+                <label>
+                    <p className="login-label">Contraseña</p>
+                    <input type="password" name='password' onChange={handleChange} value={login.password}
+                           onKeyPress={handleEnter}/>
 
-            </label>
+                </label>
+            </div>
             <div className="button-login">
                 <AdminButton onClick={handleSubmit}>
                     <AdminButtonLabel label='Entrar'/>

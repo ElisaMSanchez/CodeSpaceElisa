@@ -21,7 +21,10 @@ function Summary() {
 
     const {setOverlayConfig} = useContext(AdminOverlayContext);
 
-    const errorCallback = useCallback(() =>setOverlayConfig({message: 'Hubo problemas contactando con el servidor, por favor pruebe otra vez mas tarde', OverlayErrorType}),
+    const errorCallback = useCallback(() => setOverlayConfig({
+            message: 'Hubo problemas contactando con el servidor, por favor pruebe otra vez mas tarde',
+            OverlayErrorType
+        }),
         [setOverlayConfig]);
 
     useEffect(() => {
@@ -82,7 +85,8 @@ function Summary() {
                 <Customers onSearchCustomers={handleOnSearchCustomers} onSelectCustomer={handleOnSelectCustomer}/>
             </div>
             <div className='summary-active-voucher'>
-                <Voucher openVoucher={openVoucher} lessons={lessons || []} onClickActivateVoucher={handleOnClickActivateVoucher}
+                <Voucher openVoucher={openVoucher} lessons={lessons || []}
+                         onClickActivateVoucher={handleOnClickActivateVoucher}
                          onClickCloseVoucher={handleOnClickCloseVoucher}
                          display={selectedCustomerId !== null}/>
             </div>

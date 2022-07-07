@@ -32,7 +32,8 @@ function AdminMenu({tabConfigs, onLogout}) {
                     })
                 }
             </div>
-            <div className="admin-menu-logout" onClick={handleLogoutOnClick}><FaSignOutAlt className="admin-menu-logout-icon"/></div>
+            <div className="admin-menu-logout" onClick={handleLogoutOnClick}><FaSignOutAlt
+                className="admin-menu-logout-icon"/></div>
         </div>
 
     );

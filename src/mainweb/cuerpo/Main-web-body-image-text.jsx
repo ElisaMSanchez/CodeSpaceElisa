@@ -1,9 +1,9 @@
 import "./Main-web-body-image-text.css"
 
-export default function MainWebBodyItem(props){
+export default function MainWebBodyItem(props) {
     return (
 
-            <div className="main-web-body-item-container">
+        <div className="main-web-body-item-container">
             <div>
                 <img
                     alt="perry"
@@ -12,13 +12,12 @@ export default function MainWebBodyItem(props){
                 />
             </div>
             <div className="main-web-body-item-container-paragraph">
-                <p >
+                <p>
                     {props.text}
                 </p>
             </div>
 
-            </div>
-
+        </div>
 
 
     );

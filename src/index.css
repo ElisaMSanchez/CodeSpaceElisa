@@ -2,6 +2,7 @@
     font-family: "Gotham Light";
     src: url("Gotham Light.otf") format("opentype");
 }
+
 @font-face {
     font-family: "Gotham Bold";
     src: url("Gotham Bold.otf") format("opentype");
@@ -9,10 +10,8 @@
 
 :root {
     --verde-claro: #b4d6ca;
-    --verde-claro-plus:#e1f2ec ;
-    --verde-oscuro:#2caa95;
-
-    --black: #000;
+    --verde-claro-plus: #e1f2ec;
+    --verde-oscuro: #2caa95;
 }
 
 html, body {
@@ -28,7 +27,7 @@ code {
     monospace;
 }
 
-input{
+input {
     width: 100%;
     border: 2px solid var(--verde-oscuro);
     box-shadow: 0 0 10px -5px var(--verde-oscuro);

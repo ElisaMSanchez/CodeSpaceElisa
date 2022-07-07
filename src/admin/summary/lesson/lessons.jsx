@@ -160,15 +160,18 @@ function Lessons({display, lessons, onNewLesson, onLessonUpdated, onLessonDelete
     function displayLessonForm(lesson, handleChange, handleSubmit) {
         return (
             <div className='lesson-form'>
-                <div className='lesson-form-item'>
-                    <label className='lesson-form-item-label'>Fecha: </label>
-                    <input type='date' required={true} name='createdAt' className='lesson-form-item-input-date'
-                           onChange={handleChange} value={lesson.createdAt || new Date().toISOString()}/>
-                </div>
-                <div className='lesson-form-item'>
-                    <label className='lesson-form-item-label'>Comentario Privado: </label>
-                    <textarea name='internalComment' className='lesson-form-item-input-comment' onChange={handleChange}
-                              value={lesson.internalComment}/>
+                <div className='lesson-form-wrapper'>
+                    <div className='lesson-form-item'>
+                        <label className='lesson-form-item-label'>Fecha: </label>
+                        <input type='date' required={true} name='createdAt' className='lesson-form-item-input-date'
+                               onChange={handleChange} value={lesson.createdAt || new Date().toISOString()}/>
+                    </div>
+                    <div className='lesson-form-item'>
+                        <label className='lesson-form-item-label'>Comentario Privado: </label>
+                        <textarea name='internalComment' className='lesson-form-item-input-comment'
+                                  onChange={handleChange}
+                                  value={lesson.internalComment}/>
+                    </div>
                 </div>
 
                 <div className='lesson-form-item'>
