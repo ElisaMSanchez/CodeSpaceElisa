@@ -14,9 +14,16 @@ function useToken(tokenName) {
         setToken(userToken.token);
     };
 
+    const deleteToken = () => {
+        console.log("Deleting token");
+        sessionStorage.removeItem(tokenName);
+        setToken(null);
+    };
+
     return [
         token,
-        saveToken
+        saveToken,
+        deleteToken
     ];
 }
 

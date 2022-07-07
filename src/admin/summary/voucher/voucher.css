@@ -24,9 +24,13 @@
 .voucher-status.active {
     border: 2px solid var(--verde-oscuro);
     box-shadow: 0 0 10px -5px var(--verde-oscuro);
+    color:var(--verde-oscuro);
     flex-direction: column;
     gap: 10px;
     width: 100%;
+    margin-top:1rem;
+    padding-top:  1rem;
+    padding-bottom: .5rem;
 
 }
 

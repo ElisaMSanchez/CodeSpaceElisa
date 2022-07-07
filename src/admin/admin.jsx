@@ -10,19 +10,19 @@ function Admin() {
         {path: '/admin/new-customer', label: 'Alta Cliente'}
     ];
 
-    const [token, setToken] = useToken('admin-token');
+    const [token, setToken, deleteToken] = useToken('admin-token');
     console.log(`token: ${token}`);
 
     return token ?
-        displayAdmin(adminMenuTabConfigs)
+        displayAdmin(adminMenuTabConfigs, deleteToken)
         : displayAdminLogin(setToken);
 }
 
-function displayAdmin(adminMenuTabConfigs) {
+function displayAdmin(adminMenuTabConfigs, deleteToken) {
     return (
         <div className='admin'>
             <div className='admin-menu-overlay'>
-                <AdminMenu tabConfigs={adminMenuTabConfigs}/>
+                <AdminMenu tabConfigs={adminMenuTabConfigs} onLogout={deleteToken}/>
             </div>
             <div className='admin-content-overlay'>
                 <Outlet/>

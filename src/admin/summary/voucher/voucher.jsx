@@ -1,9 +1,7 @@
 import './voucher.css'
-
 import AdminButton from '../../common/admin-button';
 import AdminButtonLabel from '../../common/admin-button-label';
-
-import { FaWhatsapp } from "react-icons/fa";
+import {FaDeploydog} from "react-icons/fa";
 
 export default function Voucher({display, openVoucher, lessons, onClickActivateVoucher, onClickCloseVoucher}) {
 
@@ -36,7 +34,7 @@ export default function Voucher({display, openVoucher, lessons, onClickActivateV
                                     const voucherLessonClass = `voucher-status-lesson ${index < usedLessons ? 'used' : 'free'}`;
 
                                     return (
-                                        <FaWhatsapp key={String(index)} className={voucherLessonClass}/>
+                                        <FaDeploydog key={String(index)} className={voucherLessonClass}/>
                                     );
                                 })
                             }

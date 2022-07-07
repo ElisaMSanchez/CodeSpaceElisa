@@ -10,7 +10,6 @@
     justify-content: center;
     color:var(--verde-oscuro);
 
-
 }
 
 .admin-button-overlay:active {
@@ -25,6 +24,7 @@
     border: 2px solid var(--verde-oscuro);
     box-shadow: 0 0 5px -1px var(--verde-oscuro);
     font-family: "Gotham Bold", serif;
+
 
 }
 

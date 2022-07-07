@@ -58,6 +58,8 @@ function NewCustomer() {
                     <textarea name='comments' className='new-customer-form-item-input-observaciones'
                               onChange={handleChange} value={customer.comments}/>
                 </div>
+            </div>
+            <div>
                 <div className='new-customer-form-item'>
                     <AdminButton onClick={handleOnSubmit} extraClass='new-customer-form-item-button'>
                         <AdminButtonLabel label='Alta Cliente'/>

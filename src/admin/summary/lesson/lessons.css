@@ -4,6 +4,7 @@
     flex-direction: column;
     height: 100%;
     justify-content: flex-start;
+    color:var(--verde-oscuro);
 }
 
 .lessons.visible {
@@ -20,9 +21,14 @@
 }
 
 .lessons-table {
-    border: 1px black solid;
+    border: 2px solid var(--verde-oscuro);
+    box-shadow: 0 0 10px -5px var(--verde-oscuro);
+    border-radius: 4px;
     width: 100%;
     word-break: break-word;
+    color: var(--verde-oscuro);
+    font-family: "Gotham Bold",serif;
+    border-collapse: collapse;
 }
 
 .lessons-table-tr {
@@ -30,7 +36,17 @@
 }
 
 .lessons-table-tr.head {
-    font-weight: bold;
+    font-family: "Gotham Bold", serif;
+    background-color: var(--verde-oscuro);
+    color: white;
+}
+
+.lessons-table-tr.body.white {
+    background-color: white;
+}
+
+.lessons-table-tr.body.green {
+    background-color: var(--verde-claro);
 }
 
 .lessons-table-actions {
@@ -41,10 +57,8 @@
 }
 
 .lessons-table-actions .action {
-    flex: 0.4 1 0;
-    height: 2em;
-    padding-left: 0.2em;
-    padding-right: 0.2em;
+    flex: 1 1 auto;
+    height: 1em;
 }
 
 .lesson-form {
@@ -54,6 +68,8 @@
     gap: 0.5em;
     height: 100%;
     justify-content: space-evenly;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .lesson-form-item {
@@ -62,6 +78,7 @@
     flex: 0.1 0.5 auto;
     flex-direction: column;
     justify-content: flex-start;
+
 }
 
 .lesson-form-item-label {
@@ -69,7 +86,8 @@
 }
 
 .lesson-form-item-input-date {
-    width: 8em;
+    width: 70%;
+    color: var(--verde-oscuro);
 }
 
 .lesson-form-item-input-comment {
@@ -77,6 +95,10 @@
     display: block;
     height: 5em;
     width: 100%;
+    border: 2px solid var(--verde-oscuro);
+    box-shadow: 0 0 10px -5px var(--verde-oscuro);
+    color:var(--verde-oscuro);
+    background-color: var(--verde-claro-plus);
 }
 
 .lesson-form-item-button {
