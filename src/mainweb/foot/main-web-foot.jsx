@@ -14,7 +14,7 @@ export default function MainWebFoot() {
 
     return (
 
-        <div className="mainWEb-foot">
+        <div className="main-web-foot">
             {
                 foot.map(item =>
                     <MainWebFootItem

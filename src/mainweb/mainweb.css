@@ -1,9 +1,4 @@
-body {
-    background-color: white;
-
-}
-
-.mainWeb {
+.main-web {
     display: flex;
     flex-direction: column;
     border: 4px solid #2caa95;
