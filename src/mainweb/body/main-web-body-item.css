@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 70%;
 }
 
 .main-web-body-item-container-image {
@@ -10,11 +11,13 @@
     border: 4px solid #2caa95;
     box-shadow: 0 0 15px -5px var(--verde-oscuro);
     border-radius: 4px;
+    flex: 1 1 auto;
 }
 
 .main-web-body-item-container-paragraph {
     width: 250px;
     height: auto;
+    flex: 1 1 auto;
 }
 
 @media (max-width: 620px) {
