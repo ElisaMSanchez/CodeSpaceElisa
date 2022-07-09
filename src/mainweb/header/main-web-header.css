@@ -1,15 +1,28 @@
 .main-web-header {
     display: flex;
     flex: 1 1 auto;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     padding-bottom: 20px;
-
 }
 
 .main-web-header-logo {
     justify-content: center;
     margin-top: 1rem;
+}
+
+.main-web-header-login-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex: 1 1 0;
+}
+
+.main-web-header-login {
+    color: var(--verde-oscuro);
+    flex: 1 1 0;
+    max-width: 2rem;
 }
 
 @media (max-width: 440px) {
