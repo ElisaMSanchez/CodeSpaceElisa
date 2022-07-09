@@ -101,6 +101,11 @@
     color: var(--verde-oscuro);
 }
 
+.lessons-table-label-comment {
+    margin-top: 0.5rem;
+    display: block;
+}
+
 .lesson-form-item-input-comment {
     box-sizing: border-box;
     display: block;
@@ -110,6 +115,7 @@
     box-shadow: 0 0 10px -5px var(--verde-oscuro);
     color: var(--verde-oscuro);
     background-color: var(--verde-claro-plus);
+    margin-bottom: 1rem;
 }
 
 .lesson-form-item-button {
@@ -141,6 +147,10 @@
 
     .lesson-form {
         display: none;
+    }
+
+    .lessons-table {
+        margin-bottom: 1rem;
     }
 
     .lessons-table-tr.body.update {
