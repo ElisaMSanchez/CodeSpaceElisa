@@ -7,11 +7,9 @@ export default function MainWebHeader() {
     return (
         <div className="main-web-header">
             <img className="main-web-header-logo" src={headerLogo} alt="logo"/>
-            <div className="main-web-header-login-wrapper">
-                <Link to="/admin">
-                    <FaRegUserCircle className="main-web-header-login" />
-                </Link>
-            </div>
+            <Link to="/admin">
+                <FaRegUserCircle className="main-web-header-login" />
+            </Link>
         </div>
     );
 }

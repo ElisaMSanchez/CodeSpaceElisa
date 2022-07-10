@@ -1,9 +1,4 @@
 .main-web-header {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
     padding-bottom: 20px;
 }
 
@@ -13,16 +8,21 @@
 }
 
 .main-web-header-login-wrapper {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    flex: 1 1 0;
+    position: absolute;
+    right: 1.5rem;
+    height: 2rem;
+    top: 1.5rem;
+    width: 2rem;
 }
 
 .main-web-header-login {
+    position: absolute;
+    right: 1.5rem;
+    height: 3rem;
+    top: 1.5rem;
+    width: 3rem;
     color: var(--verde-oscuro);
     flex: 1 1 0;
-    max-width: 2rem;
 }
 
 @media (max-width: 440px) {

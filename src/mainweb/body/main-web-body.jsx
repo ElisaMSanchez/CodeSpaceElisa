@@ -1,18 +1,20 @@
 import MainWebBodyItem from "./main-web-body-item";
-import dog from "../image/dog.jpg";
+import dogSleeping from "../image/dog_sleeping.jpg";
+import duoDogsFlowers from "../image/duo_dogs_flowers.jpg";
+import walkingDog from "../image/walking_dog.jpg";
 import "./main-web-body.css"
 
 export default function MainWebBody() {
     const body = [
         {
             text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-            image: dog, key: 1, direction: 'normal'
+            image: duoDogsFlowers, key: 1, direction: 'normal'
         }, {
             text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-            image: dog, key: 2, direction: 'reverse'
+            image: dogSleeping, key: 2, direction: 'reverse'
         }, {
             text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-            image: dog, key: 3, direction: 'normal'
+            image: walkingDog, key: 3, direction: 'normal'
         }];
 
     return (
